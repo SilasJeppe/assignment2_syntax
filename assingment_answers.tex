@@ -63,8 +63,13 @@
 			$(t + v - j) \% 5 = 0 \neq (t + 3v - j) \% 5 = 0$. \\
 			By using pumping lemma, this exercise does not contain a regular language. For some expamples this will stille end as a regular language, but will fail most of the time.
 			\item \{$w \in \{ Y,N \}^{\star}$ $w$ contains at least two Y's and at most two N's \}
-			Regular like exercise 5a, since its possible to make a FA for this language.\\~\\
-			\textbf{PICTURE HERE!!}\\~\\
+			Regular like exercise 5a, since its possible to make a FA for this language.
+			\begin{figure}[H]
+				\centering
+				\includegraphics[width=0.7\linewidth]{5d}
+				\caption{}
+				\label{fig:5d}
+			\end{figure}
 			\item \{$w \in \{ a,b \}^{\star}$ $w$ contains exactly two more b's than a's\}\\
 			L is a infinite language and if we assume that L is regular, we'll try to apply the pumping lemma. \\
 			We'll end up with: $w = a^mb^{m+2}$. Then we can write down the xyz:\\
@@ -85,9 +90,39 @@
 		\item Let $\Sigma = \{a,b\}$. Consider the following grammars.
 		 \begin{enumerate}[label=(\alph*)]
 		 	\item $S \rightarrow aS|Sb|\epsilon$
+		 	\begin{enumerate}
+		 		\item a, b, $\epsilon$, ab, aaa
+		 		\item ba, baa, bab, baaa, baba
+		 		\item $a^{\star}b^{\star}$
+		 		\item L is in this exercise regular since we can write down a regular expression.
+		 	\end{enumerate}
 		 	\item $S \rightarrow aSa|bSb|a|b$
+		 	\begin{enumerate}
+		 		\item a, aa, aba, aabaa, bababab
+		 		\item abaa, aaba, bbab, aaab, ab
+		 		\item $w \in (a, b)^\star$ | $w$ is symmetric. 
+		 		\item L is in this exercise not regular, this can be proven by applying Pumping Lemma.
+		 	\end{enumerate}
 		 	\item $S \rightarrow aS|bS|\epsilon$
+		 	\begin{enumerate}
+		 		\item a, b, $\epsilon$, ab, aaa
+		 		\item $\emptyset$
+		 		\item $w \in (a, b)^\star$ | $w$ is anything\\~\\DFA:
+					\begin{figure}[H]
+						\centering
+						\includegraphics{7cc}
+						\caption{}
+						\label{fig:7cc}
+					\end{figure}
+		 		\item L is in this exercise regular since it takes every possible string and can be proven by a FA.
+		 	\end{enumerate}
 		 	\item $S \rightarrow aS|aSbS|\epsilon$
+		 	\begin{enumerate}
+		 		\item a, ab, aab, aaba, aaabaa
+		 		\item b, ba bab, abba, bb
+		 		\item $w \in (a, b)^\star$ | $w$ contains either a equal amount of a's and b's or always more a's than b's. 
+		 		\item L is in this exercise not regular, this can be proven by applying Pumping Lemma.
+		 	\end{enumerate}
 		 \end{enumerate}
 	For each language defined by the grammars, do the following:
 		\begin{enumerate}[label=(\alph*)]
